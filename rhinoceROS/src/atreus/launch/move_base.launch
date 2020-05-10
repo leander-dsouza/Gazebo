@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<launch>
+  <arg name="no_static_map" default="false"/>
+
+  <arg name="base_global_planner" default="navfn/NavfnROS"/>
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/>
+
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+
+
+  	<!--COSTMAPS-->
+
+  	<rosparam file="$(find atreus)/config/move_base/costmaps/costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find atreus)/config/move_base/costmaps/costmap_common.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find atreus)/config/move_base/costmaps/costmap_local.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find atreus)/config/move_base/costmaps/costmap_global.yaml" command="load" ns="global_costmap" />
+
+
+
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>
+    <rosparam file="$(find atreus)/config/move_base/global_planner/navfnros_planner.yaml" command="load" />
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>
+    <rosparam file="$(find atreus)/config/move_base/local_planner/dwa_planner.yaml" command="load" />
+
+
+    <rosparam file="$(find atreus)/config/move_base/move_base.yaml" command="load" />
+
+   </node>
+
+</launch>

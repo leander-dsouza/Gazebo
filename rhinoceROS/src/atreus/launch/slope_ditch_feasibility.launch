@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <include file="$(find atreus)/launch/empty_world.launch">
+ 
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+  </include>
+
+<!-- set these parameters on Parameter Server -->
+<param name="robot_description" textfile="$(find atreus)/urdf/rover_obj_feasibility.gazebo" />
+<param name="use_gui" value="false"/>
+<!--tfs for joints , robot state publisher publishes tfs for joints-->
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  
+
+  <!-- Spawn dd_robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+     args="-file $(find atreus)/urdf/rover_obj_feasibility.gazebo -urdf -model nice_ride" />
+
+
+</launch>
+

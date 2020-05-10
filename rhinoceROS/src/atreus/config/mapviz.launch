@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<launch>
+  <node pkg="mapviz" type="mapviz" name="mapviz">
+  	<param name="config" value="$(find ros_service)/config/.globalplanner_config"/>
+  </node>
+
+  <node pkg="swri_transform_util" type="initialize_origin.py" name="initialize_origin">
+
+    <param name="local_xy_frame" value="/map"/>
+    <param name="local_xy_origin" value="/wgs84"/>
+    <rosparam param="local_xy_origins">
+      [{ name: /wgs84,
+         latitude: 38.419354,          <!--(38.419354)   URC-->   <!--(13.347590)   WORKSHOP-->
+         longitude: -110.781900,       <!--(-110.781900) URC-->   <!--(74.79208833) WORKSHOP-->
+         altitude: 5,
+         heading: 0.0}]
+    </rosparam>
+  </node>
+
+  <node pkg="tf" type="static_transform_publisher" name="swri_transform" args="0 0 0 0 0 0 /map /origin 100"/>
+
+ <node pkg="swri_transform_util" type="gps_transform_publisher" name="gps_transform_publisher">
+ 	<remap from="gps" to="/gps_fix"/>
+        <param name="parent_frame_id" value="/map"/>
+        <param name="child_frame_id" value="/odom"/>
+    	<rosparam param="local_xy_origins">
+    	</rosparam>
+ </node>
+
+</launch>

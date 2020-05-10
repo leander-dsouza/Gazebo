@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="image_view" type="stereo_view" name="" respawn="true" output="screen">    
+        <remap from="stereo" to="/"/>
+        <remap from="image" to="image_rect"/>
+	<param name="approximate_sync" value="true"/>
+	<param name="queue_size" value="10"/>
+    </node>
+</launch>

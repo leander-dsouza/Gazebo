@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <include file="$(find atreus)/launch/maze_world.launch">
+ 
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+
+  </include>
+
+<!-- set these parameters on Parameter Server -->
+<param name="robot_description" textfile="$(find atreus)/urdf/ar_rover.gazebo" />
+<param name="use_gui" value="false"/>
+<!--tfs for joints , robot state publisher publishes tfs for joints-->
+   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  
+<!--include file="$(find atreus)/launch/ar_gazebo_front.launch"/>
+<include file="$(find atreus)/launch/ar_gazebo_right.launch"/>-->
+<include file="$(find atreus)/launch/depth_proc.launch"/>
+
+<!--<node name="mapviz_robot_image_publisher" pkg="atreus" type="mapviz_gps_fix.py"/> 
+<node name="noisy_odom_node" pkg="atreus" type="noisy_odom.py"/>-->
+<!--
+  <node name="pcl_processing_node" pkg="pcl_processor" type="cloudy"/>
+ -->
+
+<node pkg="tf2_ros" type="static_transform_publisher" name="bl_imu" args="0 0 0 0 0 0 base_link imu_frame"/> 
+<node pkg="tf2_ros" type="static_transform_publisher" name="bl_gps" args="0 0 0 0 0 0 base_link gps_frame"/>
+<node pkg="tf2_ros" type="static_transform_publisher" name="bl_lidar" args="0 0 0 0 0 0 base_link lidar_link"/>
+
+
+
+
+  <!-- Spawn dd_robot into Gazebo -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
+     args="-file $(find atreus)/urdf/ar_rover.gazebo -urdf -model rs200" />
+
+
+</launch>
+

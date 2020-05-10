@@ -1,0 +1,51 @@
+TrajectoryPlannerROS:
+  
+  max_vel_x: 0.5  # 0.55
+  min_vel_x: 0.05
+
+  max_vel_y: 0.0  # diff drive robot
+  min_vel_y: 0.0  # diff drive robot
+
+  max_trans_vel: 0.5  # choose slightly less than the base's capability
+  min_trans_vel: 0.1  # this is the min trans velocity when there is negligible rotational velocity
+  trans_stopped_vel: 0.1
+
+  # Warning!
+  #   do not set min_trans_vel to 0.0 otherwise dwa will always think
+  #   translational velocities
+  #   are non-negligible and small in place rotational velocities will be
+  #   created.
+
+  max_rot_vel: 5.0  # choose slightly less than the base's capability
+  min_rot_vel: 0.4  # this is the min angular velocity when there is negligible translational velocity
+  rot_stopped_vel: 0.4
+
+  acc_lim_x: 1.0 # maximum is theoretically 2.0.
+  acc_lim_theta: 2.0
+  acc_lim_y: 0.0  # diff drive robot
+
+  meter_scoring: true
+
+  holonomic_robot: false
+
+  xy_goal_tolerance: 0.2
+  yaw_goal_tolerance: 0.2
+  latch_xy_goal_tolerance: false
+
+ #The velocity the robot will command when trying to escape from a stuck situation
+  escape_vel: -0.1
+
+  dwa: false
+
+
+  # The weighting for how much the controller should stay close to the path it was given, maximal possible value is 5.0 (double, default: 0.6)
+pdist_scale: 2.5
+
+# The weighting for how much the controller should attempt to reach its local goal, also controls speed, maximal possible value is 5.0 (double, default: 0.8)
+gdist_scale: 0.8
+
+# The weighting for how much the controller should attempt to avoid obstacles (double, default: 0.01)
+occdist_scale: 0.01
+
+# Whether or not to publish the cost grid that the planner will use when planning. When true, a sensor_msgs/PointCloud2 will be available on the ~<name>/cost_cloud topic. Each point cloud represents the cost grid and has a field for each individual scoring function component as well as the overall cost for each cell, taking the scoring parameters into account. New in navigation 1.4.0 (bool, default: false)
+publish_cost_grid_pc: false

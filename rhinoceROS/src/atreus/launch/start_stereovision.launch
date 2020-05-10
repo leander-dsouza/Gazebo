@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="stereo_image_proc" type="stereo_image_proc" name="" respawn="true">
+        <remap from="left/image_raw" to="/stereo/left/image_raw" />
+        <remap from="left/camera_info" to="/stereo/left/camera_info" />
+        <remap from="right/image_raw" to="/stereo/right/image_raw" />
+        <remap from="right/camera_info" to="/stereo/right/camera_info" />
+	<param name="approximate_sync" value="true"/>
+	<param name="queue_size" value="10"/>
+    </node>
+	<node pkg="tf" type="static_transform_publisher" name="rcamera_frame_bdcst" args="0 0 0 -1.5708 0 -1.5708  base_link base_camera_front_L 50" />
+</launch>

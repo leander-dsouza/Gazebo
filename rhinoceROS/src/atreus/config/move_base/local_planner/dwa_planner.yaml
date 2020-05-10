@@ -1,0 +1,97 @@
+DWAPlannerROS:
+
+###Robot Configuration Parameters
+
+  #The x acceleration limit of the robot in meters/sec^2
+  acc_lim_x : 2.5
+
+  #The y acceleration limit of the robot in meters/sec^2 
+  acc_lim_y : 2.5
+
+  #The rotational acceleration limit of the robot in radians/sec^2
+  acc_lim_theta : 3
+
+  #The absolute value of the maximum translational velocity for the robot in m/s
+  max_trans_vel : 2.0
+ 
+  #The absolute value of the minimum translational velocity for the robot in m/s 
+  min_trans_vel : 0.1
+
+  #The maximum x velocity for the robot in m/s.
+  max_vel_x : 2.0
+
+  #The minimum x velocity for the robot in m/s, negative for backwards motion.
+  min_vel_x : -0.8
+
+  #The maximum y velocity for the robot in m/s
+  max_vel_y : 0
+
+  #The minimum y velocity for the robot in m/s
+  min_vel_y : 0
+
+  #The absolute value of the maximum rotational velocity for the robot in rad/s
+  max_rot_vel : 1.6
+
+  #The absolute value of the minimum rotational velocity for the robot in rad/s
+  min_rot_vel : 0.6
+
+###Goal Tolerance Parameters
+
+  #The tolerance in radians for the controller in yaw/rotation when achieving its goal
+  yaw_goal_tolerance : 0.2
+
+  #The tolerance in meters for the controller in the x & y distance when achieving a goal
+  xy_goal_tolerance : 0.3
+
+  #If goal tolerance is latched, if the robot ever reaches the goal xy location it will simply rotate in place, even if it ends up outside the goal tolerance while it is doing so.
+  latch_xy_goal_tolerance : false
+
+###Forward Simulation Parameters
+
+  #The amount of time to forward-simulate trajectories in seconds
+  sim_time : 5.0
+
+  #The step size, in meters, to take between points on a given trajectory
+  sim_granularity : 0.025
+
+  #The number of samples to use when exploring the x velocity space
+  vx_samples : 20
+
+  #The number of samples to use when exploring the y velocity space
+  vy_samples : 0
+
+  #The number of samples to use when exploring the theta velocity space
+  vth_samples : 40
+
+###Trajectory Scoring Parameters
+
+  #The weighting for how much the controller should stay close to the path it was given
+  path_distance_bias : 100
+
+  #The weighting for how much the controller should attempt to reach its local goal, also controls speed
+  goal_distance_bias : 2.5
+
+  #The weighting for how much the controller should attempt to avoid obstacles
+  occdist_scale : 2
+
+  #The distance from the center point of the robot to place an additional scoring point, in meters
+  forward_point_distance : 0.325
+
+  #The amount of time that the robot must stop before a collision in order for a trajectory to be considered valid in seconds
+  stop_time_buffer : 0.2
+
+  #The absolute value of the velocity at which to start scaling the robot's footprint, in m/s
+  scaling_speed : 0.5
+
+  #The maximum factor to scale the robot's footprint by
+  max_scaling_factor : 0.2
+
+###Oscillation Prevention Parameters
+
+  #How far the robot must travel in meters before oscillation flags are reset
+  oscillation_reset_dist : 0.05
+
+##Global Plan Parameters
+
+  #Defines whether or not to eat up the plan as the robot moves along the path. If set to true, points will fall off the end of the plan once the robot moves 1 meter past them.
+  prune_plan : true

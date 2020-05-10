@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<launch>
+	<node pkg="rtabmap_ros" type="rgbd_odometry" name="vo">
+		<remap from="rgb/image" to="/r200/camera/color/image_raw"/>
+		<remap from="rgb/camera_info" to="/r200/camera/color/camera_info"/>
+		<remap from="depth/image" to="/r200/camera/depth/image_raw"/>
+
+		<!-- 0=Frame-to-Map (F2M) 1=Frame-to-Frame (F2F) -->
+		<!-- <param name="Odom/Strategy" value="1"/> -->
+
+		<!-- Correspondences: 0=Features Matching, 1=Optical Flow -->
+		<!-- <param name="Vis/CorType" value="1"/> -->
+
+		<!-- <param name="Odom/ResetCountdown" type="string" value="1"/> -->
+		<param name="publish_tf" value="false"/>
+		<remap from="/odom" to="/visual_odom"/>
+	</node>
+	<node pkg="tf" type="static_transform_publisher" name="laser" args="0 0 0 0 0 0 base_link camera_link  10"/>
+</launch>

@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+
+<!--STAGE 1-->
+
+<!-- LEG1-->
+    <include>
+      <uri>model://holder0</uri>
+      <pose>10 10 0 0 0 0</pose>
+    </include>
+
+<!-- LEG2-->
+    <include>
+      <uri>model://holder1</uri>
+      <pose>20 15 0 0 0 -1.5707</pose>
+    </include>
+
+<!-- LEG3-->
+    <include>
+      <uri>model://holder2</uri>
+      <pose>30 25 0 0 0 1.5707</pose>
+    </include>
+
+
+<!-- LEG4-->
+    <include>
+      <uri>model://holder3</uri>
+      <pose>40 22 0 0 0 -3.1414</pose>
+    </include>
+
+    <include>
+      <uri>model://holder4</uri>
+      <pose>40 25 0 0 0 -3.1414</pose>
+    </include>
+
+<!--STAGE2-->
+<!-- LEG5-->
+    <include>
+      <uri>model://holder5</uri>
+      <pose>35 -12 0 0 0 3.1414</pose>
+    </include>
+
+    <include>
+      <uri>model://holder6</uri>
+      <pose>35 -10 0 0 0 3.1414</pose>
+    </include>
+
+
+
+
+<!-- LEG6-->
+    <include>
+      <uri>model://holder7</uri>
+      <pose>20 -22 0 0 0 1.5707</pose>
+    </include>
+
+    <include>
+      <uri>model://holder8</uri>
+      <pose>22 -22 0 0 0 1.5707</pose>
+    </include>
+
+
+    <include>
+      <uri>model://box</uri>
+      <pose>30 -15 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://box</uri>
+      <pose>35 -20 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://box</uri>
+      <pose>20 -30 0 0 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://box</uri>
+      <pose>20 -25 0 0 0 0</pose>
+    </include>
+
+
+<!-- LEG7-->
+    <include>
+      <uri>model://holder9</uri>
+      <pose>-20 22 0 0 0 1.5707</pose>
+    </include>
+
+    <include>
+      <uri>model://holder10</uri>
+      <pose>-22 22 0 0 0 1.5707</pose>
+    </include>
+
+
+    <include>
+      <uri>model://box</uri>
+      <pose>-20 10 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://box</uri>
+      <pose>-20 -10 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://box</uri>
+      <pose>-19 0 0 0 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://box</uri>
+      <pose>-10 -20 0 0 0 0</pose>
+    </include>
+
+
+  </world>
+</sdf>

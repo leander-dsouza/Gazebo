@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+ -<node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 /map /odom 100"/>
+
+
+  <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" respawn="true">
+
+    <param name="magnetic_declination_radians" value="0"/>
+
+    <param name="yaw_offset" value="1.57079632"/>
+    <param name="publish_filtered_gps" value="true"/>
+
+    <remap from="/imu/data" to="/imu" />
+    <remap from="/gps/fix" to="/fix" />
+    <remap from="/odometry/filtered" to="/odometry/wheel_imu_gps" />
+
+  </node>
+
+
+<node pkg= "robot_localization" type="ekf_localization_node" name= "ekf_localization_with_global_planner">
+	<rosparam command="load" file="$(find atreus)/config/ekf_localization_map.yaml" />
+	<remap from="odometry/filtered" to="/odometry/wheel_imu_gps" />
+</node>
+
+<node pkg= "robot_localization" type="ekf_localization_node" name= "ekf_localization_with_local_planner">
+	<rosparam command="load" file="$(find atreus)/config/ekf_localization_odom.yaml" />
+	<remap from="odometry/filtered" to="/odometry/wheel_imu" />
+</node>
+
+
+</launch>
