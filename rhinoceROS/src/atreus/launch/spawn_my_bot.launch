@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-  <include file="$(find atreus)/launch/maze_world.launch">
+  <include file="$(find atreus)/launch/empty_world.launch">
  
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>

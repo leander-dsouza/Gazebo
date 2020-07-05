@@ -14,7 +14,7 @@
 
 
     <include>
-      <uri>model://maze</uri>
+      <uri>model://square_frame</uri>
       <pose>10 0 0 0 0 0</pose>
     </include>
 

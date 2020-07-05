@@ -1,6 +1,6 @@
 # Project Description:
 
-This project serves its purpose as it was created for the Autonomous Task of Universal Rover Challenge 2020. It follows traversal
+This project serves its purpose as it was created for the Autonomous Task of University Rover Challenge 2020. It follows traversal
 between a pair of Alvar Tags of dimensions - 20cm x 20cm. Mounted on a variable podium that ranges from 30cm - 100cm and is separated from
 each other that varies from 2m -3m.
 
