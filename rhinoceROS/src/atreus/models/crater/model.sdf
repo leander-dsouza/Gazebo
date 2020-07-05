@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
-<sdf version='1.6'>
-  <model name="curiosity_path">
+<sdf version="1.6">
+  <model name="crater">
       <static>1</static>
       <link name='link'>
         <inertial>
@@ -17,7 +17,7 @@
         <collision name='collision'>
           <geometry>
             <mesh>
-              <uri>model://curiosity_path/meshes/curiosity_path.stl</uri>
+              <uri>model://crater/meshes/crater_martian_red.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -41,7 +41,7 @@
         <visual name='visual'>
           <geometry>
             <mesh>
-              <uri>model://curiosity_path/meshes/mars_path_simple1.dae</uri>
+              <uri>model://crater/meshes/crater_martian_red.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>

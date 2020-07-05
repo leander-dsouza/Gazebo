@@ -1,0 +1,130 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <world name="default">
+
+    <!-- A global light source -->
+    <include>
+      <uri>model://sun</uri>
+	<pose>0 0 0 0 0 0</pose>
+    </include>
+    <!-- A ground plane -->
+    <include>
+      <uri>model://mars</uri>
+      <pose>0 0 0 0 0 0</pose>
+    </include>
+
+    <scene>
+	<background>202 150 66</background>
+        <ambient>0 0 0 1.0</ambient>
+        <shadows>0</shadows>		
+    </scene>
+
+
+    <include>
+      <uri>model://terrain</uri>
+      <name>terrain</name>
+      <pose>2 1 0.2 0 0 -1.575</pose>
+    </include>
+
+
+    <include>
+      <uri>model://terrain</uri>
+      <name>terrain1</name>
+      <pose>-22.869 -11.08 0.2</pose>
+    </include>
+
+    <include>
+      <uri>model://terrain</uri>
+      <name>terrain2</name>
+      <pose>-21 13.09 0.2 .01 0 0</pose>
+    </include>
+
+
+    <include>
+      <uri>model://rockformation</uri>
+      <name>rockformation</name>
+      <pose>1 -9 0 0 0 1.75</pose>
+    </include>
+
+    <include>
+      <uri>model://rockformation</uri>
+      <name>rockformation2</name>
+      <pose>-1 4 0 3.141593 -0.008 1.7915</pose>
+    </include>
+
+    <include>
+      <uri>model://rockformation</uri>
+      <name>rockformation3</name>
+      <pose>10.401 4.11 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://rockformation</uri>
+      <name>rockformation4</name>
+      <pose>-18.77 -9.72 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://rockformation</uri>
+      <name>rockformation5</name>
+      <pose>-29.2 -2.79 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://rockformation</uri>
+      <name>rockformation7</name>
+      <pose>-17.39 2.28 0 0 0 -0.2</pose>
+    </include>
+
+    <include>
+      <uri>model://jaggedrock</uri>
+      <name>jaggedrock</name>
+      <pose>5 7 0 0 0 -0.7</pose>
+    </include>
+
+    <include>
+      <uri>model://jaggedrock</uri>
+      <name>jaggedrock2</name>
+      <pose>-9 1 -0 -0.2499 0 -2.399</pose>
+    </include>
+
+    <include>
+      <uri>model://jaggedrock</uri>
+      <name>jaggedrock3</name>
+      <pose>-33.515 -5 0 0 0 2.4</pose>
+    </include>
+
+
+    <include>
+      <uri>model://rock9</uri>
+      <name>rock9</name>
+      <pose>-4.844 19.6 0 1.05 .6 0</pose>
+    </include>
+
+    <include>
+      <uri>model://rock9</uri>
+      <name>rock9_1</name>
+      <pose>1.849 23.56 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://rock9</uri>
+      <name>rock9_2</name>
+      <pose>-39.766 -19.65 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://rock9</uri>
+      <name>rock9_3</name>
+      <pose>-38.024 6.469 0 0 0 -1.7</pose>
+    </include>
+
+    <include>
+      <uri>model://rock9</uri>
+      <name>rock9_4</name>
+      <pose>-8.1 -8.18 0 0 0 .85</pose>
+    </include>
+
+
+  </world>
+</sdf>

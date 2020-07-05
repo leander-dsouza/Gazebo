@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-  <include file="$(find atreus)/launch/empty_world.launch">
+  <include file="$(find atreus)/launch/irdc_world.launch">
  
     <arg name="paused" default="false"/>
     <arg name="use_sim_time" default="true"/>
@@ -33,9 +33,9 @@
 <node pkg="tf2_ros" type="static_transform_publisher" name="bl_lidar" args="0 0 0 0 0 0 base_link lidar_link"/>
 
 
-<arg name="x" default="0" />
+<arg name="x" default="-3" />
 <arg name="y" default="0" />
-<arg name="z" default="0" />
+<arg name="z" default="3" />
 
   <!-- Spawn dd_robot into Gazebo -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
