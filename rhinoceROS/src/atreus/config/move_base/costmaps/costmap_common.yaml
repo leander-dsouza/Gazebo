@@ -5,8 +5,8 @@ footprint: [[0.4,0.3],[-0.4,0.3],[-0.4,-0.3],[0.4,-0.3]]
 inflation_radius: 0.4
 
 
-origin_x: 4.406334
-origin_y: -4.844409
+origin_x: -21.649988
+origin_y: -11.762978
 origin_z: 0.0 
 
 publish_frequency: 1.0

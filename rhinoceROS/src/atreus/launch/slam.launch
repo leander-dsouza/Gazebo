@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-<arg name="database_path" default="$(find atreus)/map/square_frame.db"/>
+<arg name="database_path" default="$(find atreus)/map/irdc/database/irdc_mars.db"/>
 
 
 <group ns="rtabmap">
@@ -27,8 +27,8 @@
           
           <param name="frame_id" type="string" value="base_link"/>
 
-          <param name="subscribe_depth" type="bool" value="false"/>
-          <param name="subscribe_rgb"  type="bool" value="false"/>
+          <param name="subscribe_depth" type="bool" value="true"/>
+          <param name="subscribe_rgb"   type="bool" value="true"/>
           <param name="subscribe_rgbd"  type="bool" value="true"/>
           <param name="subscribe_scan"  type="bool" value="true"/>
 
@@ -45,7 +45,7 @@
           <param name="RGBD/LinearUpdate"         type="string" value="0.01"/>
           <param name="RGBD/OptimizeFromGraphEnd" type="string" value="false"/>
           <param name="RGBD/ProximityPathMaxNeighbors" type="string" value="10"/>
-          <param name="Grid/FromDepth"            type="string" value="false"/> <!-- occupancy grid from lidar -->
+          <param name="Grid/FromDepth"            type="string" value="true"/> <!-- occupancy grid from lidar -->
           <param name="Reg/Force3DoF"             type="string" value="true"/>
           <param name="Reg/Strategy"              type="string" value="1"/> <!-- 1=ICP -->
           

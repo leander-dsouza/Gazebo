@@ -3,8 +3,8 @@
 
 
 <!-- MAP SERVER -->
-<node name="loc_map_server" pkg="map_server" type="map_server" args="$(find atreus)/map/square_map.yaml" output="screen">
-        <remap from="map" to="square_map"/>
+<node name="loc_map_server" pkg="map_server" type="map_server" args="$(find atreus)/map/irdc2/map.yaml" output="screen">
+        <remap from="map" to="irdc_mars"/>
 </node>
 
 
@@ -12,7 +12,7 @@
 <node pkg="amcl" type="amcl" name="amcl" output="screen">
   
   <remap from="scan" to="/lidar" />
-  <remap from="map" to="square_map" />
+  <remap from="map" to="irdc_mars" />
 
   <!-- Publish scans from best pose at a max of 10 Hz -->
   <param name="odom_model_type" value="diff"/>
