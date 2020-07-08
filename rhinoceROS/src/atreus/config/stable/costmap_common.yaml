@@ -3,14 +3,13 @@ otprint_padding: 0.01
 
 robot_base_frame: base_link
 update_frequency: 4.0
-publish_frequency: 3.0
-transform_tolerance: 0.5
+publish_frequency: 1.0 #REDUCE THIS TO STOP COSTMAP2DROS TIMEOUT ERROR
+transform_tolerance: 1.00
 
 resolution: 0.05
 
 obstacle_range: 5.5
 raytrace_range: 16.0
-
 
 #layer definitions
 static:
