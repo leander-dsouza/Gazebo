@@ -1,4 +1,4 @@
-#! /usr/bin/env python
+#! /usr/bin/env python3
 import rospy
 from geometry_msgs.msg import Twist
 import time
@@ -11,7 +11,7 @@ ob1 = Twist()
 def forward():
     global  ob1
     #print("FORWARD")
-    ob1.linear.x = 4.0
+    ob1.linear.x = 4
     ob1.linear.y = 0
     ob1.linear.z = 0
 
@@ -23,7 +23,7 @@ def forward():
 def backward():
     # print("BACKWARD")
     global ob1
-    ob1.linear.x = -2.0
+    ob1.linear.x = -2
     ob1.linear.y = 0
     ob1.linear.z = 0
 
@@ -43,7 +43,7 @@ def right():
 
     ob1.angular.x = 0
     ob1.angular.y = 0
-    ob1.angular.z = 2.5
+    ob1.angular.z = 10
     pub.publish(ob1)
 
 
@@ -55,7 +55,7 @@ def left():
 
     ob1.angular.x = 0
     ob1.angular.y = 0
-    ob1.angular.z = -2.5
+    ob1.angular.z = -10
     pub.publish(ob1)
 
 

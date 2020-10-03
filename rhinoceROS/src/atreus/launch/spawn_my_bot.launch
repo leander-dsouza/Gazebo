@@ -12,7 +12,7 @@
   </include>
 
 <!-- set these parameters on Parameter Server -->
-<param name="robot_description" textfile="$(find atreus)/urdf/ar_rover.gazebo" />
+<param name="robot_description" textfile="$(find atreus)/urdf/rover_research.gazebo" />
 <param name="use_gui" value="false"/>
 <!--tfs for joints , robot state publisher publishes tfs for joints-->
    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
@@ -39,7 +39,7 @@
 
   <!-- Spawn dd_robot into Gazebo -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" output="screen"
-     args="-file $(find atreus)/urdf/ar_rover.gazebo -urdf -x $(arg x) -y $(arg y) -z $(arg z) -model rs200" />
+     args="-file $(find atreus)/urdf/rover_research.gazebo -urdf -x $(arg x) -y $(arg y) -z $(arg z) -model rs200" />
 
 
 </launch>
